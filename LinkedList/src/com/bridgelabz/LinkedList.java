@@ -31,6 +31,23 @@ public class LinkedList {
 		return isAdded;
 	}
 
+	public boolean enqueue(final int data) {
+		boolean isAdded = false;
+		Node newNode = new Node(data);
+		if (head == null) {
+			head = newNode;
+			isAdded = true;
+		} else {
+			Node temp = head;
+			while (temp.next != null) {
+				temp = temp.next;
+			}
+			temp.next = newNode;
+			isAdded = true;
+		}
+		return isAdded;
+	}
+
 	public void push(int data) {
 		Node node = new Node(data);
 		node.next = head;
@@ -87,7 +104,7 @@ public class LinkedList {
 		head = temp.next;
 		return temp.key;
 	}
-	
+
 	public void peak() {
 		if (head == null) {
 			System.out.println("Stack is empty");
