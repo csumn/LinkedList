@@ -87,8 +87,8 @@ public class LinkedList {
 		head = temp.next;
 		return temp.key;
 	}
-	public boolean search(int elememt) {
 
+	public boolean search(int elememt) {
 		if(head == null) {
 			System.out.println("List is empty");
 			return false;
@@ -105,6 +105,25 @@ public class LinkedList {
 		}
 		System.out.println(isFound);
 		return isFound;
+	}
+
+	public void insertNextToElement(int elememt, int data) {
+		Node node = new Node(data);
+		if(head == null) {
+			System.out.println("List is empty");
+		}
+		Node temp = head;
+		while(temp != null) {
+
+			if(temp.key == elememt) {
+//				System.out.println("Element added");
+				Node newNode = temp.next;
+				temp.next = node;
+				node.next = newNode;
+				break;
+			}
+			temp = temp.next;
+		}
 	}
 
 	public int popLast() {
