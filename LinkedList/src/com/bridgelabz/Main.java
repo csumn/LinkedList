@@ -12,5 +12,7 @@ public class Main {
 		linkedList.print();
 		linkedList.remove(40);
 		linkedList.print();
+		linkedList.sort();
+		linkedList.print();
 	}
 }
