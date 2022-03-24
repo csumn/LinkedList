@@ -116,7 +116,7 @@ public class LinkedList {
 		while(temp != null) {
 
 			if(temp.key == elememt) {
-//				System.out.println("Element added");
+				//				System.out.println("Element added");
 				Node newNode = temp.next;
 				temp.next = node;
 				node.next = newNode;
@@ -144,6 +144,30 @@ public class LinkedList {
 		temp.next = null;
 		return data;
 	}
+
+	public boolean remove(int element) {
+		if(!search(element)) {
+			System.out.println("Element which need to be removed is not present");
+			return false;
+		}
+		Node temp = head;
+		Node prev = null;
+		if(temp != null && temp.key == element) {
+			head = temp.next;
+			return true;
+		}
+
+		while(temp != null) {
+			if(temp.key == element ) {
+				prev.next = temp.next;
+				return true;
+			}
+			prev = temp;
+			temp = temp.next;
+		}
+		return false;
+	}
+
 	public void print() {
 		Node temp = head;
 		System.out.println("Linked List :");
