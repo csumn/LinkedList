@@ -1,23 +1,23 @@
 package com.bridgelabz;
 
 public class LinkedList {
-	private Node head;
-
-	private class Node {
-		int data;
+private Node head;
+	
+	private class Node{
+		int key;
 		Node next;
-
-		Node(int data) {
-			this.data = data;
-			next = null;
+		
+		public Node(int key) {
+			this.key = key;
 		}
 	}
 
-	public boolean add(final int data) {
+	public boolean append(int data) {
 		boolean isAdded = false;
-		Node newNode = new Node(data);
+		
+		Node node = new Node(data);
 		if(head == null) {
-			head = newNode;
+			head = node;
 			isAdded = true;
 		}
 		else {
@@ -25,23 +25,20 @@ public class LinkedList {
 			while(temp.next != null) {
 				temp = temp.next;
 			}
-			temp.next = newNode;
+			temp.next = node;
 			isAdded = true;
 		}
 		return isAdded;
 	}
-	public void push(int data) {
-		Node newNode = new Node(data);
-		newNode.next = head;
-		head = newNode;		
-	}
-
-	public void display() {
+		
+	public void print() {
 		Node temp = head;
-		System.out.println("Linked list is");
+		System.out.println("Linked List :");
+		
 		while(temp != null) {
-			System.out.print(temp.data+"->");
+			System.out.print(temp.key + " -> ");
 			temp = temp.next;
 		}
+		System.out.println();
 	}
 }
