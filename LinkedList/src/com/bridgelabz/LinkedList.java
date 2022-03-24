@@ -78,6 +78,15 @@ public class LinkedList {
 			node.next = curr;
 		}
 	}
+	public int pop() {
+		if(head == null) {
+			System.out.println("List is Empty");
+			return 0;
+		}
+		Node temp = head;
+		head = temp.next;
+		return temp.key;
+	}
 
 	public void print() {
 		Node temp = head;
