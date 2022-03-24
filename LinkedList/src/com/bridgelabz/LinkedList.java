@@ -56,6 +56,29 @@ public class LinkedList {
 		return isAdded;
 	}
 
+	public void insertAtPos(int pos, int data) {
+		if(pos < 1) {
+			System.out.println("Invalid pos");
+			return;
+		}
+
+		if(pos == 1) {
+			push(data);
+		}
+		else {
+			Node node = new Node(data);
+			Node temp = head;
+			int count = 2;
+			while(count < pos) {
+				temp = temp.next;
+				count++;
+			}
+			Node curr = temp.next;
+			temp.next = node;
+			node.next = curr;
+		}
+	}
+
 	public void print() {
 		Node temp = head;
 		System.out.println("Linked List :");
