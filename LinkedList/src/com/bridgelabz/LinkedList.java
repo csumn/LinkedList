@@ -12,7 +12,7 @@ public class LinkedList {
 			next = null;
 		}
 	}
-	
+
 	public boolean add(final int data) {
 		boolean isAdded = false;
 		Node newNode = new Node(data);
@@ -29,6 +29,11 @@ public class LinkedList {
 			isAdded = true;
 		}
 		return isAdded;
+	}
+	public void push(int data) {
+		Node newNode = new Node(data);
+		newNode.next = head;
+		head = newNode;		
 	}
 
 	public void display() {
