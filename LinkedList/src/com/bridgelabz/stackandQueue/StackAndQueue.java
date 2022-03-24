@@ -9,6 +9,11 @@ public class StackAndQueue {
 		stack.push(70);
 		stack.push(30);
 		stack.push(56);
+		stack.peak();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.peak();
 		stack.print();	
 	}
 }
