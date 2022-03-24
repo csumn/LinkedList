@@ -16,8 +16,11 @@ public class LinkedList {
 		boolean isAdded = false;
 
 		Node newNode = new Node(data);
+		boolean isAdded = false;
+
+		Node node = new Node(data);
 		if(head == null) {
-			head = newNode;
+			head = node;
 			isAdded = true;
 		}
 		else {
@@ -25,16 +28,14 @@ public class LinkedList {
 			while(temp.next != null) {
 				temp = temp.next;
 			}
-			temp.next = newNode;
+			temp.next = node;
 			isAdded = true;
 		}
 		return isAdded;
 	}
-
 	public void print() {
 		Node temp = head;
 		System.out.println("Linked List : ");
-
 		while(temp != null) {
 			System.out.print(temp.key + " -> ");
 			temp = temp.next;
