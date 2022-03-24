@@ -3,18 +3,18 @@ package com.bridgelabz;
 public class LinkedList {
 	private Node head;
 
-	private class Node {
-		int data;
+	private class Node{
+		int key;
 		Node next;
 
-		Node(int data) {
-			this.data = data;
-			next = null;
+		public Node(int key) {
+			this.key = key;
 		}
 	}
-	
-	public boolean add(final int data) {
+
+	public boolean add(int data) {
 		boolean isAdded = false;
+
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
@@ -31,12 +31,14 @@ public class LinkedList {
 		return isAdded;
 	}
 
-	public void display() {
+	public void print() {
 		Node temp = head;
-		System.out.println("Linked list is");
+		System.out.println("Linked List : ");
+
 		while(temp != null) {
-			System.out.print(temp.data+"->");
+			System.out.print(temp.key + " -> ");
 			temp = temp.next;
 		}
+		System.out.println();
 	}
 }
