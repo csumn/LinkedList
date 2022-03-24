@@ -47,7 +47,19 @@ public class LinkedList {
 		}
 		return isAdded;
 	}
+	public void dequeue() {
+		Node temp = head;
+		if (temp == null) {
+			System.out.println("Queue is empty");
+			return;
+		} else if (head.next == null) {
+			temp = null;
 
+		} else {
+			head = head.next;
+			temp = null;
+		}
+	}
 	public void push(int data) {
 		Node node = new Node(data);
 		node.next = head;
