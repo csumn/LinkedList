@@ -178,4 +178,22 @@ public class LinkedList {
 		}
 		System.out.println();
 	}
+
+	public void sort() {
+		System.out.println("\n ----Sorted---- \n");
+		Node temp1 = head;
+		Node temp2;
+		while(temp1.next != null) {
+			temp2 = temp1.next;
+			while(temp2 != null) {
+				if(temp1.key > temp2.key) {
+					int temp = temp1.key;
+					temp1.key= temp2.key;
+					temp2.key = temp;
+				}
+				temp2 = temp2.next;
+			}
+			temp1 = temp1.next;
+		}
+	}
 }
