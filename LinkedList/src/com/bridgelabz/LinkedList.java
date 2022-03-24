@@ -87,6 +87,25 @@ public class LinkedList {
 		head = temp.next;
 		return temp.key;
 	}
+	public boolean search(int elememt) {
+
+		if(head == null) {
+			System.out.println("List is empty");
+			return false;
+		}
+		Node temp = head;
+		boolean isFound = false;
+		while(temp != null) {
+
+			if(temp.key == elememt) {
+				isFound = true;
+				break;
+			}
+			temp = temp.next;
+		}
+		System.out.println(isFound);
+		return isFound;
+	}
 
 	public int popLast() {
 		if(head == null) {

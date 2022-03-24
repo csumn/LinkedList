@@ -7,7 +7,6 @@ public class Main {
 		linkedList.append(30);
 		linkedList.append(70);
 		linkedList.print();
-		linkedList.popLast();
-		linkedList.print();
+		linkedList.search(30);
 	}
 }
