@@ -13,7 +13,7 @@ public class StackAndQueue {
 		stack.pop();
 		stack.pop();
 		stack.pop();
-		stack.peak();
+//		stack.peak();
 		stack.print();	
 	}
 }

@@ -12,13 +12,10 @@ public class LinkedList {
 		}
 	}
 
-	public boolean add(int data) {
-		boolean isAdded = false;
-
+	public void add(int data) {
 		Node node = new Node(data);
 		if(head == null) {
 			head = node;
-			isAdded = true;
 		}
 		else {
 			Node temp = head;
@@ -26,39 +23,29 @@ public class LinkedList {
 				temp = temp.next;
 			}
 			temp.next = node;
-			isAdded = true;
 		}
-		return isAdded;
 	}
 
-	public boolean enqueue(final int data) {
-		boolean isAdded = false;
+	public void enqueue(final int data) {
 		Node newNode = new Node(data);
 		if (head == null) {
 			head = newNode;
-			isAdded = true;
 		} else {
 			Node temp = head;
 			while (temp.next != null) {
 				temp = temp.next;
 			}
 			temp.next = newNode;
-			isAdded = true;
 		}
-		return isAdded;
 	}
-	public void dequeue() {
-		Node temp = head;
-		if (temp == null) {
-			System.out.println("Queue is empty");
-			return;
-		} else if (head.next == null) {
-			temp = null;
 
-		} else {
-			head = head.next;
-			temp = null;
-		}
+	public int dequeue() {
+		if (head == null) {
+			System.out.println("Queue is empty");
+			return 0;
+		} Node temp = head;
+		head = temp.next;
+		return temp.key;
 	}
 	public void push(int data) {
 		Node node = new Node(data);
@@ -66,13 +53,10 @@ public class LinkedList {
 		head = node;
 	}
 
-	public boolean append(int data) {
-		boolean isAdded = false;
-
+	public void append(int data) {
 		Node node = new Node(data);
 		if(head == null) {
 			head = node;
-			isAdded = true;
 		}
 		else {
 			Node temp = head;
@@ -80,9 +64,7 @@ public class LinkedList {
 				temp = temp.next;
 			}
 			temp.next = node;
-			isAdded = true;
 		}
-		return isAdded;
 	}
 
 	public void insertAtPos(int pos, int data) {
@@ -187,27 +169,23 @@ public class LinkedList {
 		return data;
 	}
 
-	public boolean remove(int element) {
+	public void remove(int element) {
 		if(!search(element)) {
 			System.out.println("Element which need to be removed is not present");
-			return false;
 		}
 		Node temp = head;
 		Node prev = null;
 		if(temp != null && temp.key == element) {
 			head = temp.next;
-			return true;
 		}
 
 		while(temp != null) {
 			if(temp.key == element ) {
 				prev.next = temp.next;
-				return true;
 			}
 			prev = temp;
 			temp = temp.next;
 		}
-		return false;
 	}
 
 	public void print() {
